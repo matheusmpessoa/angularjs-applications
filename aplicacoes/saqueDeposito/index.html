@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app">
+
+<head>
+    <title>Routing - AngularJS</title>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/united/bootstrap.min.css" rel="stylesheet" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row text-center topo">
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="content-site" ng-controller="ListaOperacaoCtrl">
+            <form id="formulario">
+                <fieldset>
+                    <div class="row text-center">
+                        <input type="radio" name="tipo" value="Saque" ng-model="operacao.tipo">
+                        <label>Saque</label>
+                        <input type="radio" name="tipo" value="Deposito" ng-model="operacao.tipo">
+                        <label>Deposito</label>
+
+                        <input type="hidden" ng-model="operacao.total">
+
+                        <input type="text" ng-model="operacao.valor">
+                        <button class="btn btnAdicionar" ng-click="adicionaOperacao()">Adicionar</button>
+                    </div>
+                </fieldset>
+            </form>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="operacao in operacoes">
+                        <td>{{operacao.tipo}}</td>
+                        <td>{{operacao.valor}}</td>
+                        <td><a href="#" ng-click="del(operacao.valor)">Excluir</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <b>Total:</b> {{saldo}}
+        </section>
+    </div>
+
+    <!-- jQuery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <!-- AngularJS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
