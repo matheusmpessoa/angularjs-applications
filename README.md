@@ -2,6 +2,7 @@
 Pequenas aplicações utilizando o framework JavaScript AngularJS
 
 ## Aplicações contidas neste repositório
+- __[inputLista](aplicacoes/inputLista)__
 - __[saqueDeposito](aplicacoes/saqueDeposito)__
 
 ### Linguagens utilizadas
