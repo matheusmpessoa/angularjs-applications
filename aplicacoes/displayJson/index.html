@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>angularjs-applications</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <h1 class="page title">Exibir informação de um JSON em uma view</h1>
+        <div>
+            <h2>Info de JSON - Musicas</h2>
+            <div class="row-fluid">
+                <br /> <b>Rock -</b> {{data.musicas.rock}}
+                <br /> <b>Reggae -</b> {{data.musicas.reggae}}
+                <br /> <b>Funk -</b> {{data.musicas.funk}}
+                <br /> <b>Rap -</b> {{data.musicas.rap}}
+                <br /> <b>Metal -</b> {{data.musicas.metal}}
+            </div>
+            <h2>Informação de Objetos - Filmes</h2>
+            <div class="row-fluid">
+                <table class="table table-hover table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Gênero</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="filme in data.filmes">
+                            <td>{{filme.name}}</td>
+                            <td>{{filme.genreType}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pre>Data = {{data | json}}</pre>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <!-- AngularJS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
