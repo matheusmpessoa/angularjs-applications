@@ -6,6 +6,7 @@ Pequenas aplicações utilizando o framework JavaScript AngularJS.
 - __[inputLista](aplicacoes/inputLista)__
 - __[lista](aplicacoes/lista)__
 - __[saqueDeposito](aplicacoes/saqueDeposito)__
+- __[videoNgRepeat](aplicacoes/videoNgRepeat)__
 
 ### Linguagens utilizadas
 * HTML5
